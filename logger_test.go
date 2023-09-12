@@ -67,10 +67,10 @@ func TestLogger(t *testing.T) {
 }
 
 func TestFormatSuffix(t *testing.T) {
-	expected := "I am suffix from formatting trmplate +100500\n"
+	expected := "I am suffix from formatting template +100500\n"
 	outputInto := &bytes.Buffer{}
 	logger := leveledlogger.NewLogger("INFO", outputInto)
-	logger.Info("%s +%d", "I am suffix from formatting trmplate", 100500)
+	logger.Info("%s +%d", "I am suffix from formatting template", 100500)
 	output := outputInto.String()
 	if !strings.HasSuffix(outputInto.String(), expected) {
 		t.Errorf("Logger %s output: %q not contains %q\n", logger.LogLevel(), output, expected)
